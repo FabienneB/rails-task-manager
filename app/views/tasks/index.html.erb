@@ -1,21 +1,20 @@
-<div class="container">
+<div class="container ">
   <div class="row">
-    <div class="col-xs-6 col-offset-3">
-      <h1>Tasks list</h1>
+    <div class="col-xs-6 col-xs-offset-3 box-shadow">
+      <h1 class = "text-center">Tasks list</h1>
       <ul class = "list-unstyled">
       <% @tasks.each do |task| %>
         <li>
-          <%= link_to task.name.capitalize, task_path(task.id) %>, Description : <i><%= task.details %></i> -
+          <%= link_to task.name.capitalize, task_path(task.id) %> - Description : <i><%= task.details.capitalize %></i> -
           <%=  link_to 'Delete a task', task_path(task.id), method: :delete %> ou
           <%=  link_to 'Update a task', edit_task_path(task.id) %>
         </li>
       <% end %>
       </ul>
 
-      <%= link_to "new task", new_task_path %>
+      <%= link_to "new task", new_task_path, class: "btn btn-primary btn-large btn-block btn-margin"%>
     </div>
   </div>
-
 </div>
 
 
